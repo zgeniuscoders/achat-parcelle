@@ -9,7 +9,7 @@
     <main class="bg-bluer">
 
         <section
-            class="w-[200px] h-[200px] blur-3xl opacity-50 bg-gradient-to-r to-emerald-600 from-sky-400 rounded-full absolute -bottom-0 -z-50">
+            class="w-[200px] h-[200px] blur-3xl opacity-50 bg-gradient-to-r to-emerald-600 from-sky-400 rounded-full absolute -bottom-0 -z-50 animate-spin animate">
         </section>
 
        
@@ -19,14 +19,14 @@
         @include('partials.homeProductSection')
 
         @include('partials.aboutSection')
-        
+
     
         <section class="my-20">
 
             <div class="container mx-auto lg:px-30 px-10 text-center">
-                <h1
+                <h3
                     class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-                    Best Sellers</h1>
+                    Best Sellers</h3>
                 <p class="mb-6 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">Here at
                     Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and
                     drive economic growth.</p>
