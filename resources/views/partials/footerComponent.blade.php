@@ -9,7 +9,7 @@
                     elegant hierarchies.</p>
                 <div class="flex space-x-6">
 
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                    <a href="#" class="text-gray-400 hover:text-gray-500 dark:hover:text-emerald-400">
                         <span class="sr-only">Facebook</span>
                         <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path fill-rule="evenodd"
@@ -18,7 +18,7 @@
                         </svg>
                     </a>
 
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                    <a href="#" class="text-gray-400 hover:text-gray-500 dark:hover:text-emerald-400">
                         <span class="sr-only">Instagram</span>
                         <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path fill-rule="evenodd"
@@ -27,7 +27,7 @@
                         </svg>
                     </a>
 
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                    <a href="#" class="text-gray-400 hover:text-gray-500 dark:hover:text-emerald-400">
                         <span class="sr-only">Twitter</span>
                         <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path
@@ -36,7 +36,7 @@
                         </svg>
                     </a>
 
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                    <a href="#" class="text-gray-400 hover:text-gray-500 dark:hover:text-emerald-400">
                         <span class="sr-only">GitHub</span>
                         <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path fill-rule="evenodd"
@@ -45,7 +45,7 @@
                         </svg>
                     </a>
 
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                    <a href="#" class="text-gray-400 hover:text-gray-500 dark:hover:text-emerald-400">
                         <span class="sr-only">Dribbble</span>
                         <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path fill-rule="evenodd"
@@ -63,19 +63,23 @@
                         <ul role="list" class="mt-4 space-y-4">
 
                             <li>
-                                <a href="#" class="text-base text-gray-500 hover:text-gray-900">Marketing</a>
+                                <a href="#"
+                                    class="text-base text-gray-500 hover:text-gray-900 dark:hover:text-emerald-400">Marketing</a>
                             </li>
 
                             <li>
-                                <a href="#" class="text-base text-gray-500 hover:text-gray-900">Analytics</a>
+                                <a href="#"
+                                    class="text-base text-gray-500 hover:text-gray-900 dark:hover:text-emerald-400">Analytics</a>
                             </li>
 
                             <li>
-                                <a href="#" class="text-base text-gray-500 hover:text-gray-900">Commerce</a>
+                                <a href="#"
+                                    class="text-base text-gray-500 hover:text-gray-900 dark:hover:text-emerald-400">Commerce</a>
                             </li>
 
                             <li>
-                                <a href="#" class="text-base text-gray-500 hover:text-gray-900">Insights</a>
+                                <a href="#"
+                                    class="text-base text-gray-500 hover:text-gray-900 dark:hover:text-emerald-400">Insights</a>
                             </li>
 
                         </ul>
@@ -85,19 +89,23 @@
                         <ul role="list" class="mt-4 space-y-4">
 
                             <li>
-                                <a href="#" class="text-base text-gray-500 hover:text-gray-900">Pricing</a>
+                                <a href="#"
+                                    class="text-base text-gray-500 hover:text-gray-900 dark:hover:text-emerald-400">Pricing</a>
                             </li>
 
                             <li>
-                                <a href="#" class="text-base text-gray-500 hover:text-gray-900">Documentation</a>
+                                <a href="#"
+                                    class="text-base text-gray-500 hover:text-gray-900 dark:hover:text-emerald-400">Documentation</a>
                             </li>
 
                             <li>
-                                <a href="#" class="text-base text-gray-500 hover:text-gray-900">Guides</a>
+                                <a href="#"
+                                    class="text-base text-gray-500 hover:text-gray-900 dark:hover:text-emerald-400">Guides</a>
                             </li>
 
                             <li>
-                                <a href="#" class="text-base text-gray-500 hover:text-gray-900">API
+                                <a href="#"
+                                    class="text-base text-gray-500 hover:text-gray-900 dark:hover:text-emerald-400">API
                                     Status</a>
                             </li>
 
@@ -110,23 +118,28 @@
                         <ul role="list" class="mt-4 space-y-4">
 
                             <li>
-                                <a href="#" class="text-base text-gray-500 hover:text-gray-900">About</a>
+                                <a href="#"
+                                    class="text-base text-gray-500 hover:text-gray-900 dark:hover:text-emerald-400">About</a>
                             </li>
 
                             <li>
-                                <a href="#" class="text-base text-gray-500 hover:text-gray-900">Blog</a>
+                                <a href="#"
+                                    class="text-base text-gray-500 hover:text-gray-900 dark:hover:text-emerald-400">Blog</a>
                             </li>
 
                             <li>
-                                <a href="#" class="text-base text-gray-500 hover:text-gray-900">Jobs</a>
+                                <a href="#"
+                                    class="text-base text-gray-500 hover:text-gray-900 dark:hover:text-emerald-400">Jobs</a>
                             </li>
 
                             <li>
-                                <a href="#" class="text-base text-gray-500 hover:text-gray-900">Press</a>
+                                <a href="#"
+                                    class="text-base text-gray-500 hover:text-gray-900 dark:hover:text-emerald-400">Press</a>
                             </li>
 
                             <li>
-                                <a href="#" class="text-base text-gray-500 hover:text-gray-900">Partners</a>
+                                <a href="#"
+                                    class="text-base text-gray-500 hover:text-gray-900 dark:hover:text-emerald-400">Partners</a>
                             </li>
 
                         </ul>
@@ -136,15 +149,18 @@
                         <ul role="list" class="mt-4 space-y-4">
 
                             <li>
-                                <a href="#" class="text-base text-gray-500 hover:text-gray-900">Claim</a>
+                                <a href="#"
+                                    class="text-base text-gray-500 hover:text-gray-900 dark:hover:text-emerald-400">Claim</a>
                             </li>
 
                             <li>
-                                <a href="#" class="text-base text-gray-500 hover:text-gray-900">Privacy</a>
+                                <a href="#"
+                                    class="text-base text-gray-500 hover:text-gray-900 dark:hover:text-emerald-400">Privacy</a>
                             </li>
 
                             <li>
-                                <a href="#" class="text-base text-gray-500 hover:text-gray-900">Terms</a>
+                                <a href="#"
+                                    class="text-base text-gray-500 hover:text-gray-900 dark:hover:text-emerald-400">Terms</a>
                             </li>
 
                         </ul>
