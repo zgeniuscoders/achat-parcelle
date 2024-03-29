@@ -7,7 +7,7 @@
 
             <ul>
                 <li>
-                    <a title="Home" href="#home" class="h-16 px-6 flex items-center  bg-emerald-700 w-full">
+                    <a title="Home" href="{{ route('admin') }}" class="h-16 px-6 flex items-center  bg-emerald-700 w-full">
                         <i class="mx-auto">
                             <svg class="fill-current h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24"
                                 height="24" viewBox="0 0 24 24">

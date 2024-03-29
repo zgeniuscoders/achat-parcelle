@@ -36,7 +36,7 @@
 
 
 
-        <div class="flex-1 flex flex-col">
+        <div class="flex-1 flex flex-col overflow-auto">
             <!-- section body top nav -->
             @include('admin.partials.topNav')
 

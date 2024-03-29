@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\PropertyController as AdminPropertyController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PropertyController;
@@ -9,3 +10,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::resource('/property', PropertyController::class);
 
 Route::get('admin', [AdminController::class, 'index'])->name('admin');
+
+Route::prefix('admin')->group(function() {
+    Route::resource('property', AdminPropertyController::class)->names('admin.property');
+});
+

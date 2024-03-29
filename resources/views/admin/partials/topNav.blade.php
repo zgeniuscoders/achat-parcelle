@@ -5,18 +5,18 @@
         <!-- add button -->
         <li class="group relative">
             <button aria-controls="add" aria-expanded="false" aria-haspopup="listbox"
-                class="flex items-center h-full px-4 text-sm">
+                class="flex items-center h-full px-4 text-sm bg-emerald-600">
                 <i>
                     <svg class="fill-current w-3 h-3 mx-auto" xmlns="http://www.w3.org/2000/svg" width="24"
                         height="24" viewBox="0 0 24 24">
                         <path d="M24 10h-10v-10h-2v10h-10v2h10v10h2v-10h10z" />
                     </svg>
                 </i>
-                <span class="ml-2">Add</span>
+                <span class="ml-2">Ajouter</span>
             </button>
             <span class="absolute p-1 hidden group-hover:block">
                 <ul id="add" role="listbox"
-                    class="outline-none py-2 bg-white border rounded-md w-screen max-w-md w-dropdown-large shadow-lg focus:outline-none leading-relaxed">
+                    class="outline-none py-2 bg-gray-900 border rounded-md w-screen max-w-md w-dropdown-large shadow-lg focus:outline-none leading-relaxed">
                     <li role="separator" class="mb-2">
                         <label class="block px-4 py-3 font-semibold">
                             New
@@ -24,16 +24,16 @@
                         <hr />
                     </li>
                     <li role="option"
-                        class="px-6 py-1 my-1 focus:outline-none focus:bg-blue-100 hover:bg-blue-100 cursor-pointer">
-                        Ticket
+                        class="px-6 py-1 my-1 focus:outline-none focus:bg-emerald-100 hover:bg-emerald-100 cursor-pointer">
+                        <a href="{{ route('admin.property.create') }}">Ajouter Parcelle</a>
+                    </li>
+                    <li role="option"
+                        class="px-6 py-1 my-1 focus:outline-none focus:bg-emerald-100 hover:bg-emerald-100 cursor-pointer">
+                        <a href="">Ajouter terrains</a>
                     </li>
                     <li role="option"
                         class="px-6 py-1 my-1 focus:outline-none focus:bg-blue-100 hover:bg-blue-100 cursor-pointer">
-                        User
-                    </li>
-                    <li role="option"
-                        class="px-6 py-1 my-1 focus:outline-none focus:bg-blue-100 hover:bg-blue-100 cursor-pointer">
-                        Organization
+                        <a href="">Ajouter Maison</a>
                     </li>
                     <li role="option"
                         class="px-6 py-1 my-1 focus:outline-none focus:bg-blue-100 hover:bg-blue-100 cursor-pointer">
