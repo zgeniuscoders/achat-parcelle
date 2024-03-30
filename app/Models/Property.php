@@ -11,7 +11,7 @@ class Property extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'height', 'width', 'details', 'price', 'status', 'image', 'images'
+        'name', 'height', 'width', 'details', 'price', 'status', 'image', 'images', 'quater_id'
     ];
 
     public function quater(): BelongsTo{

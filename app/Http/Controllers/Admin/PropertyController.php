@@ -8,6 +8,7 @@ use App\Models\Property;
 use App\Models\Township;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PropertyRequest;
 
 class PropertyController extends Controller
 {
@@ -33,26 +34,44 @@ class PropertyController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(PropertyRequest $request)
     {
+
+        $imagePaths = [];
+
         $name = $request->name;
         $details = $request->details;
         $heigth = $request->height;
         $status = $request->status;
         $width = $request->width;
-        $image = $request->file('image');
-        $images = $request->files('images');
+        $quater_id = $request->quater_id;
+
         $price = $request->price;
+
+        if ($request->hasFile('image')) {
+
+            $image = $request->file('image');
+            $imagePath = $image->store('property/images', 'public'); // Ou tout autre emplacement de stockage souhaité
+
+        }
+
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $path = $image->store('property/images', 'public'); // Ou tout autre emplacement de stockage souhaité
+                $imagePaths[] = $path;
+            }
+        }
 
         Property::create([
             'name' => $name,
+            'quater_id' => $quater_id,
             'details' => $details,
-            'heigth' => $heigth,
+            'height' => $heigth,
             'width' => $width,
-            'iamge' => $image,
+            'image' => $imagePath,
             'price' => $price,
-            'status' => $status,
-            'iamges' => $images
+            'status' => 1,
+            'images' => json_encode($imagePaths)
         ]);
 
         return redirect()->back()->with('success', 'votre property a ete poster avec success');

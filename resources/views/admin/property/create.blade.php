@@ -9,10 +9,10 @@
 @endsection
 
 @section('main')
-    <main class="px-4 my-4 ">
-
+    <main class="px-4 my-4 " x-data="{ townshipId: 0 }">
         <x-flash-component />
-        <form action="" method="post" enctype="multipart/form-data">
+
+        <form action="{{ route('admin.property.store') }}" method="post" enctype="multipart/form-data">
 
             @csrf
             <div class="grid gap-6 mb-6 md:grid-cols-2">
@@ -23,14 +23,11 @@
                 <x-input-component name='price' title='Prix' placeholder='100' type='number' />
 
                 <x-select-component name='city' title='Commune' :collections="$townships" choose='Choisir une commune' />
-      
-                <x-select-component name='quater' title='Quartier' :collections="$townships[0]->quaters" choose='Choisir un quartier' />
+
+                <x-select-component name='quater_id' title='Quartier' :collections="$townships[0]->quaters" choose='Choisir un quartier'
+                    x-bind:townshipId />
                 <x-select-component name='category_id' title='Categorie' :collections="$categories" choose='Choisir la categorie' />
                 {{-- <x-select-component name='type' title='Type' :collections="[["id" => 0, "name" => "louer"],["id" => 1, "name" => "vendre"]]" choose='Choisir la categorie' /> --}}
-
-
-                <x-input-component name='price' title='Prix' placeholder='100' type='number' />
-
 
                 <div>
 
@@ -40,6 +37,10 @@
                         class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                         id="image" type="file" name="image">
 
+                    @if ($errors->has('image'))
+                        <p class="text-red-400 mt-4">{{ $errors->first('image') }}</p>
+                    @endif
+
                 </div>
 
                 <div>
@@ -48,7 +49,11 @@
                         multiple files</label>
                     <input
                         class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                        id="multiple_files" type="file" multiple>
+                        id="multiple_files" type="file" multiple name="images[]">
+
+                        @if ($errors->has('images.*'))
+                        <p class="text-red-400 mt-4">{{ $errors->first('images.*') }}</p>
+                    @endif
 
                 </div>
 
