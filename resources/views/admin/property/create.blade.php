@@ -11,7 +11,7 @@
 @section('main')
     <main class="px-4 my-4 ">
 
-        <x-flash-component/>
+        <x-flash-component />
         <form action="" method="post" enctype="multipart/form-data">
 
             @csrf
@@ -22,10 +22,11 @@
                 <x-input-component name='width' title='Largeur' placeholder='100' type='number' />
                 <x-input-component name='price' title='Prix' placeholder='100' type='number' />
 
-                <x-select-component name='city' title='Commune' :collections="[1, 2, 3]" choose='Choisir une commune' />
-                <x-select-component name='quater' title='Quartier' :collections="[1, 2, 3]" choose='Choisir un quartier' />
-                <x-select-component name='category_id' title='Categorie' :collections="[1, 2, 3]" choose='Choisir la categorie' />
-                <x-select-component name='type' title='Type' :collections="['louer', 'vendre']" choose='Choisir la categorie' />
+                <x-select-component name='city' title='Commune' :collections="$townships" choose='Choisir une commune' />
+      
+                <x-select-component name='quater' title='Quartier' :collections="$townships[0]->quaters" choose='Choisir un quartier' />
+                <x-select-component name='category_id' title='Categorie' :collections="$categories" choose='Choisir la categorie' />
+                {{-- <x-select-component name='type' title='Type' :collections="[["id" => 0, "name" => "louer"],["id" => 1, "name" => "vendre"]]" choose='Choisir la categorie' /> --}}
 
 
                 <x-input-component name='price' title='Prix' placeholder='100' type='number' />
@@ -54,8 +55,10 @@
 
             </div>
 
+            <x-input-component name='details' title="Details" placeholder='Entrer les details' type='textarea' />
+
             <button type="submit"
-                class="text-white bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:outline-none focus:ring-emerald-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800">Publier</button>
+                class="mt-4 text-white bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:outline-none focus:ring-emerald-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800">Publier</button>
         </form>
 
     </main>

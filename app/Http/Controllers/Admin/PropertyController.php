@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Quater;
+use App\Models\Category;
+use App\Models\Property;
+use App\Models\Township;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class PropertyController extends Controller
 {
@@ -20,7 +24,10 @@ class PropertyController extends Controller
      */
     public function create()
     {
-        return view('admin.property.create');
+        $townships = Township::with('quaters')->get();
+        $categories = Category::all();
+
+        return view('admin.property.create', compact('townships', 'categories'));
     }
 
     /**
@@ -28,7 +35,27 @@ class PropertyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $name = $request->name;
+        $details = $request->details;
+        $heigth = $request->height;
+        $status = $request->status;
+        $width = $request->width;
+        $image = $request->file('image');
+        $images = $request->files('images');
+        $price = $request->price;
+
+        Property::create([
+            'name' => $name,
+            'details' => $details,
+            'heigth' => $heigth,
+            'width' => $width,
+            'iamge' => $image,
+            'price' => $price,
+            'status' => $status,
+            'iamges' => $images
+        ]);
+
+        return redirect()->back()->with('success', 'votre property a ete poster avec success');
     }
 
     /**
