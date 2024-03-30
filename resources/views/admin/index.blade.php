@@ -12,7 +12,7 @@
     <!-- main content -->
     <main class="flex-grow flex min-h-0 gap-4 my-4 px-4">
         <!-- section update to tickets -->
-        <section class="flex flex-col p-4 w-full max-w-sm flex-none bg-white/5 min-h-0 overflow-auto">
+        {{-- <section class="flex flex-col p-4 w-full max-w-sm flex-none bg-white/5 min-h-0 overflow-auto">
             <h1 class="font-semibold mb-3">
                 Updates to your tickets
             </h1>
@@ -41,7 +41,7 @@
                 </li>
 
             </ul>
-        </section>
+        </section> --}}
 
         <!-- section content -->
         <section aria-label="main content" class="flex min-h-0 flex-col flex-auto">

@@ -106,6 +106,10 @@ class PropertyController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $Property = Property::findOrFail($id);
+        $Property->delete();
+
+        return redirect()->back()->with('success', 'votre property a ete supprimer avec success success');
+
     }
 }

@@ -12,9 +12,10 @@
 
 
                 <div class="grid md:grid-cols-3 gap-3 text-start mb-8">
-                    @for ($i = 0; $i < 3; $i++)
+                    @foreach ($properties as $property)
                         @include('partials.productItem')
-                    @endfor
+                    @endforeach
+
                 </div>
 
                 <x-button-link buttonTitle="Voir Plus D'articles" />

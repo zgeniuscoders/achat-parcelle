@@ -1,13 +1,14 @@
 <article class="bg-white border border-emerald-400 rounded-lg shadow dark:bg-gray-800 dark:border-emerald-700">
     <a href="#">
-        <img class="p-8 rounded-t-lg" src="/docs/images/products/apple-watch.png" alt="product image" />
+        <img class="mb-4 rounded-t-lg w-full" src="/storage/{{ $property->image }}" alt="product image" />
     </a>
     <div class="px-5 pb-5">
-        <a href="#">
-            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Apple
-                Watch
-                Series 7 GPS, Aluminium Case, Starlight Sport</h5>
+        <a href="{{ route('property.show', ['property' => $property->id]) }}">
+            <h3 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{{ $property->name }}t</h3>
         </a>
+        <span
+            class="bg-blue-100 text-emerald-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-emerald-200 dark:text-emerald-800">{{ $property->status == 1? 'a vendre' : 'a louer'}}</span>
+
         <div class="flex items-center mt-2.5 mb-5">
             <div class="flex items-center space-x-1 rtl:space-x-reverse">
                 <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -40,9 +41,10 @@
                 class="bg-blue-100 text-emerald-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-emerald-200 dark:text-emerald-800 ms-3">5.0</span>
         </div>
         <div class="flex items-center justify-between">
-            <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
-            <a href="{{ route('property.show', 1) }}"
-                class="dark:text-gray-900 text-white bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:outline-none focus:ring-emerald-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800">Voir les details</a>
+            <span class="text-3xl font-bold text-gray-900 dark:text-white">{{ $property->price }}$</span>
+            <a href="{{ route('property.show', ['property' => $property->id]) }}"
+                class="dark:text-gray-900 text-white bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:outline-none focus:ring-emerald-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800">Voir
+                les details</a>
         </div>
     </div>
 </article>
