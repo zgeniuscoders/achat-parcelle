@@ -9,19 +9,20 @@
 @endsection
 
 @section('main')
+    {{ $errors }}
     <form action="{{ route('register') }}" method="post" class="space-y-4">
         @csrf
         <x-input-component name="email" type="email" placeholder="zgeniuscoders@gmail.com" title="Adresse Email"
             :isLogin="true" value="{{ old('email') }}" />
 
-        <x-input-component name="username" type="text" placeholder="zgeniuscoders" title="Nom d'utilisateur"
-            :isLogin="true" value="{{ old('username') }}" />
+        <x-input-component name="name" type="text" placeholder="zgeniuscoders" title="Nom d'utilisateur"
+            :isLogin="true" value="{{ old('name') }}" />
 
         <x-input-component name="password" type="password" placeholder="zgeniuscoders" title="Mot de passe"
             :isLogin="true" value="{{ old('password') }}" />
 
-        <x-input-component name="confirm_password" type="password" placeholder="zgeniuscoders"
-            title="Confirmer le mot de passe" :isLogin="true" value="{{ old('confirm_password') }}" />
+        <x-input-component name="password_confirmation" type="password" placeholder="zgeniuscoders"
+            title="Confirmer le mot de passe" :isLogin="true" value="{{ old('password_confirmation') }}" />
 
         <button
             class="bg-gradient-to-r dark:text-gray-300 from-emerald-500 to-cyan-500 shadow-lg mt-6 p-2 text-white rounded-lg w-full hover:scale-105 hover:from-cyan-500 hover:to-emerald-500 transition duration-300 ease-in-out"
