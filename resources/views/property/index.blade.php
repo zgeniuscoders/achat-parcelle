@@ -17,16 +17,16 @@
 
         <section class="container mx-auto px-4 lg:px-30 relative">
             @include('partials.tabs')
-            
+
             <div>
                 <div class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[twe-tab-active]:block text-center"
                     id="tabs-home01" role="tabpanel" aria-labelledby="tabs-home-tab01" data-twe-tab-active>
 
 
                     <div class="grid md:grid-cols-3 gap-3 text-start mb-8">
-                        @for ($i = 0; $i < 12; $i++)
+                        @foreach ($properties as $property)
                             @include('partials.productItem')
-                        @endfor
+                        @endforeach
                     </div>
 
                 </div>

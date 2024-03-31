@@ -18,7 +18,7 @@
 
                 </div>
 
-                <x-button-link buttonTitle="Voir Plus D'articles" />
+                <x-button-link buttonTitle="Voir Plus D'articles" link="{{ route('property.index') }}"/>
 
             </div>
 

@@ -80,7 +80,7 @@
                         @csrf
                         <button type="submit" class="text-red-500">supprimer</button>
                     </form>
-                    <a href="" class="text-blue-500">modifier</a>
+                    <a href="{{ route('admin.property.edit', ['property' => $property->id]) }}" class="text-blue-500">modifier</a>
                     <form action="{{ route('admin.property.update', ['property' => $property->id]) }}" method="post">
                         @method('put')
                         @csrf

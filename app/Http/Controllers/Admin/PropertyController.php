@@ -90,7 +90,11 @@ class PropertyController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $property = Property::findOrFail($id);
+        $townships = Township::with('quaters')->get();
+        $categories = Category::all();
+
+        return view('admin.property.edit', compact('property', 'townships', 'categories'));
     }
 
     /**
@@ -98,7 +102,10 @@ class PropertyController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $property = Property::findOrFail($id);
+        $property->update($request->all());
+
+        return redirect('/admin')->with('success', "votre $property->name a ete mis a jour avec success");
     }
 
     /**
@@ -109,7 +116,6 @@ class PropertyController extends Controller
         $Property = Property::findOrFail($id);
         $Property->delete();
 
-        return redirect()->back()->with('success', 'votre property a ete supprimer avec success success');
-
+        return redirect()->back()->with('success', 'votre property a ete supprimer avec success');
     }
 }

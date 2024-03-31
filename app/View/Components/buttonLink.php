@@ -11,7 +11,7 @@ class buttonLink extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public string $buttonTitle)
+    public function __construct(public string $buttonTitle, public string $link = "#")
     {
         //
     }

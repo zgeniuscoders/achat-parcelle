@@ -45,6 +45,8 @@
 
         <!-- section content -->
         <section aria-label="main content" class="flex min-h-0 flex-col flex-auto">
+            <x-flash-component />
+
             <!-- content navigation -->
             <nav class="bg-white/5 flex p-4">
                 <!-- open tickets nav -->
