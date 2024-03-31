@@ -12,7 +12,7 @@
 
     <div class="mt-4">
         <x-button-link buttonTitle="Devenir Commissionnaire" />
-        <x-button-link buttonTitle="Commencer" />
+        <x-button-link buttonTitle="Commencer" link="{{ route('property.index') }}"/>
     </div>
 
 </section>
