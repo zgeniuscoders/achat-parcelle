@@ -28,7 +28,7 @@
         <a class="group text-emerald-400 transition-all duration-100 ease-in-out" href="">
             <span
                 class="bg-left-bottom bg-gradient-to-r text-sm to-emerald-400 from-sky-400 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
-                Forget your password?
+                Mot de passe oublié ?
             </span>
         </a>
     </form>
@@ -38,11 +38,11 @@
 @section('footer')
     <div class="flex flex-col mt-4 items-center justify-center text-sm">
         <h3 class="dark:text-gray-300">
-            Don't have an account?
+            Vous n'avez pas de compte ?
             <a class="group text-emerald-400 transition-all duration-100 ease-in-out" href="{{ route('register') }}">
                 <span
                     class="bg-left-bottom bg-gradient-to-r from-emerald-400 to-emerald-400 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
-                    Sign Up
+                    Inscrivez-vous
                 </span>
             </a>
         </h3>

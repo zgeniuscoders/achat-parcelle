@@ -1,6 +1,10 @@
-import Alpine from 'alpinejs'
 import './bootstrap';
+import chat from "./components/chat.vue"
 
-window.Alpine = Alpine
-Alpine.start()
+import { createApp } from 'vue';
+createApp({})
+  .component('chat', chat)
+  .mount('#app')
+
+
 

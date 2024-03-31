@@ -12,7 +12,7 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        $properties = Property::all();
+        $properties = Property::with(['user','quater', 'quater.township'])->get();
 
         return view("property.index", compact('properties'));
     }

@@ -63,6 +63,21 @@
     </ol>
 
     <section
-    class="w-[200px] h-[200px] blur-3xl opacity-50 bg-gradient-to-r to-emerald-600 from-sky-400 rounded-full absolute -bottom-0 right-0 -z-50 animate-spin animate">
-  </section>
+        class="w-[200px] h-[200px] blur-3xl opacity-50 bg-gradient-to-r to-emerald-600 from-sky-400 rounded-full absolute -bottom-0 right-0 -z-50 animate-spin animate">
+    </section>
+    <div id="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul </div>
+
 </section>
+

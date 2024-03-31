@@ -1,9 +1,9 @@
 <nav aria-label="side bar" aria-orientation="vertical"
             class="flex-none flex flex-col items-center text-center dark:bg-white/5 text-gray-400 border-r">
-            <div class="h-16 flex items-center w-full">
+            <a class="h-16 flex items-center w-full" href="{{ route('admin') }}">
                 <img class="h-6 w-6 mx-auto"
                     src="https://raw.githubusercontent.com/bluebrown/tailwind-zendesk-clone/master/public/assets/leaves.png" />
-            </div>
+            </a>
 
             <ul>
                 <li>

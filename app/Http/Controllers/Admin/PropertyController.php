@@ -63,6 +63,7 @@ class PropertyController extends Controller
         }
 
         Property::create([
+            'user_id' => auth()->user()->id,
             'name' => $name,
             'quater_id' => $quater_id,
             'details' => $details,
