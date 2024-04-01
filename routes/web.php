@@ -11,14 +11,16 @@ use App\Http\Controllers\Admin\PropertyController as AdminPropertyController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::resource('/property', PropertyController::class);
 Route::resource('agent', AgentController::class);
-Route::get('chats', [ChatController::class, 'index'])->name('chat');
-
-
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('admin', [AdminController::class, 'index'])->name('admin');
 
-    Route::prefix('admin')->group(function () {
-        Route::resource('property', AdminPropertyController::class)->names('admin.property');
+    Route::middleware('redirect.admin')->group(function () {
+        Route::get('admin', [AdminController::class, 'index'])->name('admin');
+        Route::get('chats', [ChatController::class, 'index'])->name('chat');
+
+
+        Route::prefix('admin')->group(function () {
+            Route::resource('property', AdminPropertyController::class)->names('admin.property');
+        });
     });
 });

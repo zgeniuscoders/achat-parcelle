@@ -7,13 +7,13 @@
             <ul class="lg:flex items-center text-white gap-16 hidden">
 
                 <li class="text-md hover:text-emerald-400 @if (request()->routeIs('home')) text-emerald-400 @endif"><a
-                        href="{{ route('home') }}" class="">Accueil</a></li>
+                        href="{{ route('home') }}">Accueil</a></li>
 
                 <li class="text-md hover:text-emerald-400 @if (request()->routeIs('property.index')) text-emerald-400 @endif"><a
-                        href="{{ route('property.index') }}" class="">Articles</a></li>
+                        href="{{ route('property.index') }}">Articles</a></li>
 
-                <li class="text-md hover:text-emerald-400 @if (request()->routeIs('agent.index')) text-emerald-400 @endif"><a
-                        href="" class="">Commissionaires</a></li>
+                <li class="text-md hover:text-emerald-400 @if (request()->routeIs('chat')) text-emerald-400 @endif"><a
+                        href="{{ route('chat') }}">Messageries</a></li>
             </ul>
         </div>
 

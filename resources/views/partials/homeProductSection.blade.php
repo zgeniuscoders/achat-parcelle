@@ -11,7 +11,7 @@
                 id="tabs-home01" role="tabpanel" aria-labelledby="tabs-home-tab01" data-twe-tab-active>
 
 
-                <div class="grid md:grid-cols-3 gap-3 text-start mb-8">
+                <div class="grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-3 text-start mb-8">
                     @foreach ($properties as $property)
                         @include('partials.productItem')
                     @endforeach

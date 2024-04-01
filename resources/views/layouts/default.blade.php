@@ -10,7 +10,7 @@
     @stack('scripts')
 </head>
 
-<body class="dark:bg-gray-900">
+<body class="dark:bg-gray-900 overflow-x-hidden">
     @include('partials.navbarComponent')
     @yield('main')
     @include('partials.footerComponent')

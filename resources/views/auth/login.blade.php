@@ -9,14 +9,14 @@
 @endsection
 
 @section('main')
-    <form action="{{ route('register') }}" method="post" class="space-y-4">
+    <form action="{{ route('login') }}" method="post" class="space-y-4">
         @csrf
         <x-input-component name="email" type="email" placeholder="zgeniuscoders@gmail.com" title="Adresse Email"
             :isLogin="true" value="{{ old('email') }}" />
 
 
-        <x-input-component name="password" type="password" placeholder="zgeniuscoders" title="Mot de passe" :isLogin="true"
-            value="{{ old('password') }}" />
+        <x-input-component name="password" type="password" placeholder="*********" title="Mot de passe" :isLogin="true"
+             />
 
 
         <button

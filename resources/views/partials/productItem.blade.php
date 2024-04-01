@@ -1,4 +1,4 @@
-<article class="bg-white border border-emerald-400 rounded-lg shadow dark:bg-gray-800 dark:border-emerald-700">
+<article class="bg-white border border-emerald-400 rounded-lg shadow dark:bg-gray-800 dark:border-emerald-700 w-full">
     <a href="#">
         <img class="mb-4 rounded-t-lg w-full h-[250px] object-cover" src="/storage/{{ $property->image }}" alt="product image" />
     </a>
