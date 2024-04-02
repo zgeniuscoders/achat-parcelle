@@ -13,11 +13,11 @@ Route::resource('/property', PropertyController::class);
 Route::resource('agent', AgentController::class);
 
 Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('chats', [ChatController::class, 'index'])->name('chat');
+
 
     Route::middleware('redirect.admin')->group(function () {
         Route::get('admin', [AdminController::class, 'index'])->name('admin');
-        Route::get('chats', [ChatController::class, 'index'])->name('chat');
-
 
         Route::prefix('admin')->group(function () {
             Route::resource('property', AdminPropertyController::class)->names('admin.property');

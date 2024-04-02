@@ -23,17 +23,21 @@
                 </div>
             </form>
 
-            <user-list/>
+            <user-list />
         </section>
         <!-- component -->
-        <div class="flex-1 p:2 sm:p-6 justify-between flex flex-col h-screen overflow-hidden">
+        <div class="flex-1 p:2 sm:p-6 justify-between flex flex-col h-screen overflow-hidden" v-if="hasChatId">
             <chat-header />
-            <chat-body />
+            <chat-body :receiver-id="1" :current-user="2"/>
             <chat-footer />
+        </div>
+        <div class="flex-1 p:2 sm:p-6 flex flex-col item-center justify-center h-screen overflow-hidden">
+            <p class="text-gray-200 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, voluptatum.</p>
         </div>
 
     </main>
 </template>
+
 
 <style>
 .scrollbar-w-2::-webkit-scrollbar {
@@ -65,5 +69,26 @@ import chatBody from './chat-body.vue';
 import chatFooter from './chat-footer.vue';
 import chatHeader from './chat-header.vue';
 import UserList from './user-list.vue'
+
+import { ref,onMounted } from 'vue';
+
+const hasChatId = ref(false)
+const userId = ref({id: ""})
+
+
+function routerLoad(id) {
+    props.value.id = id
+    hasChatId.value = true
+}
+
+
+onMounted(() => {
+    // const route = useRoute()
+    // routeParams.value = route.params
+    // console.log(routeParams.value)
+    // if (routeParams.value.id) {
+    //     routerLoad(routeParams.value.id)
+    // }
+})
 
 </script>
