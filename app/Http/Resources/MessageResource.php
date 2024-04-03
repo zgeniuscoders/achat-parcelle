@@ -22,7 +22,7 @@ class MessageResource extends JsonResource
             'image' => $this->image,
             'video' => $this->video,
             'file' => $this->file,
-            'created_at' => $this->created_at->format('Y-m-d H:i:s'), // Formatted timestamp
+            // 'created_at' => $this->created_at->format('Y-m-d H:i:s'), // Formatted timestamp
         ];
     }
 }

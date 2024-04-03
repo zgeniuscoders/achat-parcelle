@@ -13,10 +13,11 @@
         </section>
 
 
-
         @include('partials.bannerSection')
 
-        @include('partials.homeProductSection')
+        @if ($properties->isNotEmpty())
+            @include('partials.homeProductSection')
+        @endif
 
         @include('partials.aboutSection')
 
@@ -124,13 +125,13 @@
 
         /*End Animations*/
         /*
-    -- Start BackGround Animation
-    */
+        -- Start BackGround Animation
+        */
         .area {
             /* background: #4e54c8; */
             background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
             /* width: 100%;
-            height: 100vh; */
+                height: 100vh; */
             /* position: absolute; */
             z-index: -1;
         }
@@ -245,7 +246,7 @@
         }
 
         /*
-    -- End BackGround Animation
-    */
+        -- End BackGround Animation
+        */
     </style>
 @endpush

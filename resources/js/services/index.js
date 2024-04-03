@@ -3,17 +3,26 @@ import axios from "axios"
 
 export function useUsers(){
 
-    const users = ref({})
+    const users = ref([])
+    const user = ref({})
     
-    const getUser = async () => {
+    const getUsers = async () => {
         await axios.get('/api/users').then(res => {
             users.value = res.data.data
         })
     }
 
+    const getUser = async (id) => {
+        await axios.get(`/api/users/${id}`).then(res => {
+            user.value = res.data.data
+        })
+    }
+
     return {
+        getUsers,
         getUser,
-        users
+        users,
+        user
     }
 
 }
@@ -34,7 +43,7 @@ export function useMessages() {
     }
 
     const getMessage = async (id) => {
-        messages.value = await axios.get(`/api/messages/${id}`)
+       await axios.get(`/api/messages/${id}`)
         .then(res => {
             messages.value = res.data.data
         })

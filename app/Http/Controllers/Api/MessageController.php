@@ -23,13 +23,14 @@ class MessageController extends Controller
      */
     public function show(string $id)
     {
-        $senderId = auth()->user()->id;
+
+        $senderId = 1;
+
         return MessageResource::collection(
-            Message::with('sender', 'receiver')
-                ->where(function ($query) use ($senderId, $id) {
-                    $query->where('sender_id', $senderId)
-                        ->where('receiver_id', $id);
-                })
+            Message::where(function ($query) use ($senderId, $id) {
+                $query->where('sender_id', $senderId)
+                    ->where('receiver_id', $id);
+            })
                 ->orWhere(function ($query) use ($senderId, $id) {
                     $query->where('sender_id', $id)
                         ->where('receiver_id', $senderId);

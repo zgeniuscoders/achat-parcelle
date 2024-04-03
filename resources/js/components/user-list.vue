@@ -1,6 +1,6 @@
 <template>
     <ul class="divide-y divide-gray-200 dark:divide-gray-700 overflow-auto h-screen" role="list">
-        <li class="py-3 sm:py-4" v-for="user in users" :key="user.id">
+        <li class="py-3 sm:py-4 cursor-pointer" v-for="user in users" :key="user.id" @click="startChat(user.id)">
             <div class="flex items-center space-x-4">
                 <div class="flex-shrink-0">
                     <img class="w-12 h-12 rounded-full" v-if="user.photo"
@@ -29,13 +29,18 @@
 
 
 import { useUsers } from '../services'
-const {getUser, users } = useUsers()
+import emitter from 'tiny-emitter/instance'
+const {getUsers, users } = useUsers()
 import {onMounted, ref} from "vue"
 
 const storage = ref('/storage/')
 
+const startChat = (id) => {
+    emitter.emit("onUserSelected", id)
+}
+
 onMounted(() => {
-    getUser()
+    getUsers()
 })
 
 </script>

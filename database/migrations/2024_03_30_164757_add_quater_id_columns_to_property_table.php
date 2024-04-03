@@ -22,8 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('property', function (Blueprint $table) {
-            //
+        Schema::table('properties', function (Blueprint $table) {
+            $table->dropConstrainedForeignIdFor(Quater::class);
         });
     }
 };

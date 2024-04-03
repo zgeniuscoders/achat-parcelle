@@ -27,11 +27,11 @@
         </section>
         <!-- component -->
         <div class="flex-1 p:2 sm:p-6 justify-between flex flex-col h-screen overflow-hidden" v-if="hasChatId">
-            <chat-header />
-            <chat-body :receiver-id="1" :current-user="2"/>
+            <chat-header :user="user" />
+            <chat-body :receiver-id="user.id" :current-user="2"/>
             <chat-footer />
         </div>
-        <div class="flex-1 p:2 sm:p-6 flex flex-col item-center justify-center h-screen overflow-hidden">
+        <div class="flex-1 p:2 sm:p-6 flex flex-col item-center justify-center h-screen overflow-hidden" v-else>
             <p class="text-gray-200 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, voluptatum.</p>
         </div>
 
@@ -64,31 +64,40 @@
 <script setup>
 // const el = document.getElementById('messages')
 // el.scrollTop = el.scrollHeight
+import emitter from 'tiny-emitter/instance'
 
 import chatBody from './chat-body.vue';
 import chatFooter from './chat-footer.vue';
 import chatHeader from './chat-header.vue';
 import UserList from './user-list.vue'
+import {useUsers} from "../services/"
 
 import { ref,onMounted } from 'vue';
 
 const hasChatId = ref(false)
-const userId = ref({id: ""})
+const receiverId = ref(3)
 
+const {getUser, user} = useUsers()
 
 function routerLoad(id) {
-    props.value.id = id
+    receiverId.value = id
     hasChatId.value = true
 }
 
 
 onMounted(() => {
+
+    getUser(3)
     // const route = useRoute()
     // routeParams.value = route.params
     // console.log(routeParams.value)
     // if (routeParams.value.id) {
     //     routerLoad(routeParams.value.id)
     // }
+
+    emitter.on("onUserSelected", (id) => {
+        routerLoad(id)
+    })
 })
 
 </script>

@@ -12,7 +12,7 @@
             </div>
             <div class="flex flex-col leading-tight">
                 <div class="text-2xl mt-1 flex items-center">
-                    <span class="text-gray-700 mr-3">Anderson Vanhron</span>
+                    <span class="text-gray-700 mr-3">{{ user.name }}</span>
                 </div>
                 <span class="text-lg text-gray-600">Junior Developer</span>
             </div>
@@ -42,4 +42,8 @@
 
 </template>
 
-<script setup></script>
+<script setup>
+
+const props = defineProps({user: Object})
+
+</script>
