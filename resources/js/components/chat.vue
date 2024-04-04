@@ -29,7 +29,7 @@
         <div class="flex-1 p:2 sm:p-6 justify-between flex flex-col h-screen overflow-hidden" v-if="hasChatId">
             <chat-header :user="user" />
             <chat-body :receiver-id="user.id" :current-user="2"/>
-            <chat-footer />
+            <chat-footer :receiver-id="user.id"/>
         </div>
         <div class="flex-1 p:2 sm:p-6 flex flex-col item-center justify-center h-screen overflow-hidden" v-else>
             <p class="text-gray-200 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, voluptatum.</p>

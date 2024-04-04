@@ -2,7 +2,7 @@
     <div id="messages" v-for="message in messages" :key="message.id"
         class="flex flex-col space-y-4 p-3 overflow-y-auto scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch">
 
-        <div class="chat-message" v-if="message.sender_id === 3">
+        <div class="chat-message" v-if="message.sender_id != props.receiverId">
 
             <div class="flex items-end">
                 <div class="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-2 items-start">
@@ -30,12 +30,18 @@
 <script setup>
 import { onMounted } from "vue"
 import { useMessages } from "../services/index"
+import emitter from 'tiny-emitter/instance'
+
 
 const { getMessage, messages } = useMessages()
 const props = defineProps({ receiverId: Number,currentUser: Number })
 
 onMounted(async () => {
-    await getMessage(3)
+    await getMessage(props.receiverId)
+
+    emitter.on('userSentMessage', async function(){
+        await getMessage(props.receiverId)
+    })
 })
 
 </script>
