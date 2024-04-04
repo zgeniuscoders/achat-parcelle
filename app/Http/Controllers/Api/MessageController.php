@@ -20,6 +20,12 @@ class MessageController extends Controller
             'receiver_id' => $request->receiverId,
             'message' => $request->message
         ]);
+
+        return response()->json([
+            "data" => [
+                "success" => "Message sent succefuly"
+            ]
+        ]);
     }
 
     /**

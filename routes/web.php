@@ -7,6 +7,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\Admin\PropertyController as AdminPropertyController;
+use App\Http\Controllers\Api\QuaterController;
+use App\Http\Controllers\Api\TownshipController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::resource('/property', PropertyController::class);
@@ -21,6 +23,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
         Route::prefix('admin')->group(function () {
             Route::resource('property', AdminPropertyController::class)->names('admin.property');
+            Route::resource('townships', TownshipController::class)->names('admin.townships')->only(['index', 'store', 'destroy', 'update']);
+            Route::resource('quaters', QuaterController::class)->names('admin.quater')->only(['index', 'store', 'destroy', 'update']);
         });
     });
 });

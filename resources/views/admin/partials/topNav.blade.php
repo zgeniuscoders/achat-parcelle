@@ -24,19 +24,27 @@
                         <hr />
                     </li>
                     <li role="option"
-                        class="px-6 py-1 my-1 focus:outline-none focus:bg-emerald-100 hover:bg-emerald-100 cursor-pointer">
+                        class="px-6 py-1 my-1 focus:outline-none focus:bg-emerald-100 hover:bg-emerald-400 cursor-pointer">
                         <a href="{{ route('admin.property.create') }}">Ajouter Parcelle</a>
                     </li>
                     <li role="option"
-                        class="px-6 py-1 my-1 focus:outline-none focus:bg-emerald-100 hover:bg-emerald-100 cursor-pointer">
+                        class="px-6 py-1 my-1 focus:outline-none focus:bg-emerald-100 hover:bg-emerald-400 cursor-pointer">
                         <a href="">Ajouter terrains</a>
                     </li>
                     <li role="option"
-                        class="px-6 py-1 my-1 focus:outline-none focus:bg-blue-100 hover:bg-blue-100 cursor-pointer">
+                        class="px-6 py-1 my-1 focus:outline-none focus:bg-blue-100 hover:bg-emerald-400 cursor-pointer">
                         <a href="">Ajouter Maison</a>
                     </li>
                     <li role="option"
-                        class="px-6 py-1 my-1 focus:outline-none focus:bg-blue-100 hover:bg-blue-100 cursor-pointer">
+                        class="px-6 py-1 my-1 focus:outline-none focus:bg-blue-100 hover:bg-emerald-400 cursor-pointer">
+                        <a href="{{ route('admin.townships.index') }}">Ajouter une commune</a>
+                    </li>
+                    <li role="option"
+                        class="px-6 py-1 my-1 focus:outline-none focus:bg-blue-100 hover:bg-emerald-400 cursor-pointer">
+                        <a href="{{ route('admin.quater.index') }}">Ajouter quartier</a>
+                    </li>
+                    <li role="option"
+                        class="px-6 py-1 my-1 focus:outline-none focus:bg-blue-100 hover:bg-emerald-400 cursor-pointer">
                         Search
                     </li>
                     <li role="separator" class="mb-2">
