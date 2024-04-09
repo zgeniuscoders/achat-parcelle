@@ -4,13 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Property;
+use App\Models\Quater;
 use App\Models\Township;
 use Illuminate\Http\Request;
 
 class PropertyController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of property.
+     * @var Request $request
+     * @var Property $properties
+     * @var Category $categories
      */
     public function index(Request $request)
     {
@@ -25,12 +29,17 @@ class PropertyController extends Controller
         }
 
         if ($request->has('city')) {
-
             $townshipRequest = $request->input('city');
             $township = Township::with('quaters')->where("name", $townshipRequest)->firstOrFail();
 
             $quaterIds = $township->quaters->pluck('id')->toArray();
             $properties = $properties->whereIn('quater_id', $quaterIds);
+        }
+
+        if ($request->has('quater')) {
+            $quaterRequest = $request->input('quater');
+            $quater = Quater::where('name', $quaterRequest)->firstOrFail();
+            $properties = $properties->where('quater_id', $quater->id);
         }
 
         $properties = $properties->get();

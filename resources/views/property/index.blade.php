@@ -6,7 +6,7 @@
 
 @section('main')
     <main class="relative mt-40">
-        <div class="container mx-auto lg:px-30 px-10 text-center">
+        <div class="container mx-auto lg:px-30 px-4 text-center">
             <h1
                 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
                 Tout nos bien</h1>
@@ -23,7 +23,7 @@
                     id="tabs-home01" role="tabpanel" aria-labelledby="tabs-home-tab01" data-twe-tab-active>
 
 
-                    <div class="grid md:grid-cols-3 gap-3 text-start mb-8">
+                    <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-3 text-start mb-8">
                         @foreach ($properties as $property)
                             @include('partials.productItem')
                         @endforeach

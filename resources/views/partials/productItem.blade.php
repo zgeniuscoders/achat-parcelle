@@ -7,7 +7,7 @@
         <a href="{{ route('property.show', ['property' => $property->id]) }}">
             <h3 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{{ $property->name }}t</h3>
         </a>
-        <p class="text-white my-2">{{ $property->details }}</p>
+        <p class="text-white my-2">{{ $property->getExcerpt() }}</p>
         <span
             class="bg-blue-100 text-emerald-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-emerald-200 dark:text-emerald-800 capitalize">{{ $property->status == 1 ? 'a vendre' : 'a louer' }}</span>
 
@@ -25,7 +25,15 @@
                     : url()->full() . '?city=' . $property->quater->township->name) }}
             "
                 class="bg-blue-100 text-emerald-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-emerald-200 dark:text-emerald-800 capitalize">{{ $property->quater->township->name }}</a>
-            <a href="{{ route('property.index') }}"
+            <a href="
+                    {{ request()->has('category')
+                        ? (request()->has('quater')
+                            ? ''
+                            : url()->full() . '&quater=' . $property->quater->name)
+                        : (request()->has('quater')
+                            ? ''
+                            : url()->full() . '?quater=' . $property->quater->name) }}
+            "
                 class="bg-blue-100 text-emerald-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-emerald-200 dark:text-emerald-800 ms-3 capitalize">{{ $property->quater->name }}</a>
         </div>
         <div class="flex items-center justify-between">

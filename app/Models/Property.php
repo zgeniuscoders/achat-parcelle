@@ -20,6 +20,11 @@ class Property extends Model
         return number_format($this->price, 0, ',', '.');
     }
 
+    public function getExcerpt()
+    {
+        return substr($this->details, 0, 150) . '...';
+    }
+
     /**
      * @return BelongTo
      */
@@ -39,7 +44,8 @@ class Property extends Model
     /**
      * @return BelongTo
      */
-    public function category(): BelongsTo{
+    public function category(): BelongsTo
+    {
         return $this->belongsTo(Category::class);
     }
 
@@ -49,5 +55,4 @@ class Property extends Model
             get: fn (string $value) => json_decode($value),
         );
     }
-
 }

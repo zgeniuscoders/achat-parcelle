@@ -1,6 +1,6 @@
 <section class="my-10 bg-white/5 flex items-center justify-center">
 
-    <div class="container mx-auto lg:px-20 p-8">
+    <div class="container mx-auto lg:px-20  px-4 py-8">
         <!--Tabs navigation-->
         @include('partials.tabs')
 
