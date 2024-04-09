@@ -30,7 +30,8 @@ class PropertyRequest extends FormRequest
             'status' => ['string', 'boolean'],
             'image' => ['required', 'image', 'mimes:jpeg,jpg,png', 'max:5120'],
             'images.*' => ['required', 'image', 'mimes:jpeg,jpg,png', 'max:5120'],
-            'quater_id' => ['required', 'integer', 'exists:quaters,id']
+            'quater_id' => ['required', 'integer', 'exists:quaters,id'],
+            'category_id' => ['required', 'integer', 'exists:Categories,id']
         ];
     }
 }

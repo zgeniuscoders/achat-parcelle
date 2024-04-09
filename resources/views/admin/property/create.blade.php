@@ -20,16 +20,14 @@
                 <x-input-component name='name' title='Nom' placeholder='Maison a louer kinshasa masina' />
                 <x-input-component name='height' title='Hauteur' placeholder='100' type='number' />
                 <x-input-component name='width' title='Largeur' placeholder='100' type='number' />
-                <x-input-component name='price' title='Prix' placeholder='100' type='number' /> 
-
-                {{-- <x-select-component name='city' title='Commune' :collections="$townships" choose='Choisir une commune' /> --}}
+                <x-input-component name='price' title='Prix' placeholder='100' type='number' />
 
                 <div>
-                    <township-field :townships="{{ $townships }}"/>
+                    <township-field :townships="{{ $townships }}" />
                 </div>
 
                 <div>
-                    <quater-field :townships="{{ $townships }}"/>
+                    <quater-field :townships="{{ $townships }}" />
                 </div>
 
                 <x-select-component name='category_id' title='Categorie' :collections="$categories" choose='Choisir la categorie' />
@@ -57,7 +55,7 @@
                         class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                         id="multiple_files" type="file" multiple name="images[]">
 
-                        @if ($errors->has('images.*'))
+                    @if ($errors->has('images.*'))
                         <p class="text-red-400 mt-4">{{ $errors->first('images.*') }}</p>
                     @endif
 

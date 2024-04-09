@@ -12,7 +12,7 @@ class Property extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'height', 'width', 'details', 'price', 'status', 'image', 'images', 'quater_id', 'user_id'
+        'name', 'height', 'width', 'details', 'price', 'status', 'image', 'images', 'quater_id', 'user_id', 'category_id'
     ];
 
     public function getFormatedPrice()
@@ -25,7 +25,8 @@ class Property extends Model
         return $this->belongsTo(Quater::class);
     }
 
-    public function user(): BelongsTo{
+    public function user(): BelongsTo
+    {
         return $this->belongsTo(User::class);
     }
 

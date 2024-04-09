@@ -38,16 +38,6 @@ class PropertyController extends Controller
     {
 
         $imagePaths = [];
-
-        $name = $request->name;
-        $details = $request->details;
-        $heigth = $request->height;
-        $status = $request->status;
-        $width = $request->width;
-        $quater_id = $request->quater_id;
-
-        $price = $request->price;
-
         if ($request->hasFile('image')) {
 
             $image = $request->file('image');
@@ -62,18 +52,17 @@ class PropertyController extends Controller
             }
         }
 
-        Property::create([
-            'user_id' => auth()->user()->id,
-            'name' => $name,
-            'quater_id' => $quater_id,
-            'details' => $details,
-            'height' => $heigth,
-            'width' => $width,
-            'image' => $imagePath,
-            'price' => $price,
-            'status' => 1,
-            'images' => json_encode($imagePaths)
-        ]);
+        Property::create(
+            array_merge(
+                $request->all(),
+                [
+                    'user_id' => auth()->user()->id,
+                    'image' => $imagePath,
+                    'status' => 1,
+                    'images' => json_encode($imagePaths)
+                ]
+            )
+        );
 
         return redirect()->back()->with('success', 'votre property a ete poster avec success');
     }
