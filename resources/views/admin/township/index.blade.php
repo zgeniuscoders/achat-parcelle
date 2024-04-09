@@ -47,36 +47,11 @@
                             #{{ $township->id }}
                         </td>
                         <td class="py-3 px-1 flex-1">
-                            <div class="relative group w-full">
-                                <p class="w-full truncate">
-                                    {{ $township->name }}
-                                </p>
-                                <!-- dropdown -->
-                                <span
-                                    class="hidden group-hover:block ml-4 mt-10 w-screen max-w-lg absolute top-0 border border-emerald-900 shadow-lg p-6 bg-gray-900 rounded-md z-50 dark:text-white text-gray-900">
-                                    <article>
-                                        <header>
-                                            <div>
-                                                <span
-                                                    class="px-3 py-1 uppercase text-xs leading-none rounded-sm bg-red-600 text-white">{{ $township->status == 1 ? 'a vendre' : 'a louer' }}</span>
-                                                <span class="ml-2 text-gray-700">Incident #12534</span>
-                                                <span class="ml-1">(Low)</span>
-                                            </div>
-                                        </header>
-                                        <section class="mt-5">
-                                            <h3 class="text-sm font-semibold mt-3">
-                                                {{ $township->details }}
-                                            </h3>
-                                        </section>
-
-                                    </article>
-                                </span>
-                                <!-- end dropdown -->
-                            </div>
+                            {{ $township->name }}
                         </td>
 
                         <td class="py-3 px-1 flex-1  flex gap-2">
-                            <form action="{{ route('admin.property.destroy', ['property' => $township->id]) }}"
+                            <form action="{{ route('admin.townships.destroy', ['township' => $township->id]) }}"
                                 method="post">
                                 @method('delete')
                                 @csrf

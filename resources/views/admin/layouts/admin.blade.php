@@ -26,7 +26,7 @@
     </style>
 </head>
 
-<body class="h-full">
+<body class="h-full" id="app">
 
 
     <div class="h-full w-full flex overflow-hidden antialiased text-gray-800 bg-white dark:bg-gray-900 dark:text-white">

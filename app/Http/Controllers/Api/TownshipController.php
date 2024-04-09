@@ -20,4 +20,11 @@ class TownshipController extends Controller
         $townships = Township::all();
         return view("admin.township.index", compact("townships"));
     }
+
+    public function destroy(string $id)
+    {
+        $township = Township::findOrFail($id);
+        $township->delete();
+        return redirect()->back();
+    }
 }

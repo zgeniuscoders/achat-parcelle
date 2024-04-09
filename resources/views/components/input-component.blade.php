@@ -17,7 +17,7 @@
         <label for="{{ $name }}" @class(
             $isLogin
                 ? 'mb-2  dark:text-gray-400 text-'
-                : 'block mb-2 text-sm font-medium text-gray-900 dark:text-white'))>{{ $title }}</label>
+                : 'block mb-2 text-sm font-medium text-gray-900 dark:text-white')>{{ $title }}</label>
         <input type="{{ $type }}" id="{{ $name }}" @class(
             $isLogin
                 ? 'border p-3 dark:bg-emerald-700 dark:text-gray-300  dark:border-gray-700 shadow-md placeholder:text-base focus:scale-105 ease-in-out duration-300 border-gray-300 rounded-lg w-full'

@@ -9,7 +9,7 @@
 @endsection
 
 @section('main')
-    <main class="px-4 my-4 " x-data="{ townshipId: 0 }">
+    <main class="px-4 my-4 ">
         <x-flash-component />
 
         <form action="{{ route('admin.property.store') }}" method="post" enctype="multipart/form-data">
@@ -20,12 +20,18 @@
                 <x-input-component name='name' title='Nom' placeholder='Maison a louer kinshasa masina' />
                 <x-input-component name='height' title='Hauteur' placeholder='100' type='number' />
                 <x-input-component name='width' title='Largeur' placeholder='100' type='number' />
-                <x-input-component name='price' title='Prix' placeholder='100' type='number' />
+                <x-input-component name='price' title='Prix' placeholder='100' type='number' /> 
 
-                <x-select-component name='city' title='Commune' :collections="$townships" choose='Choisir une commune' />
+                {{-- <x-select-component name='city' title='Commune' :collections="$townships" choose='Choisir une commune' /> --}}
 
-                <x-select-component name='quater_id' title='Quartier' :collections="$townships[0]->quaters" choose='Choisir un quartier'
-                    x-bind:townshipId />
+                <div>
+                    <township-field :townships="{{ $townships }}"/>
+                </div>
+
+                <div>
+                    <quater-field :townships="{{ $townships }}"/>
+                </div>
+
                 <x-select-component name='category_id' title='Categorie' :collections="$categories" choose='Choisir la categorie' />
                 {{-- <x-select-component name='type' title='Type' :collections="[["id" => 0, "name" => "louer"],["id" => 1, "name" => "vendre"]]" choose='Choisir la categorie' /> --}}
 
