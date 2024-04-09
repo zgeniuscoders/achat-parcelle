@@ -19,21 +19,13 @@
                     class="outline-none py-2 bg-gray-900 border rounded-md w-screen max-w-md w-dropdown-large shadow-lg focus:outline-none leading-relaxed">
                     <li role="separator" class="mb-2">
                         <label class="block px-4 py-3 font-semibold">
-                            New
+                            Nouveau
                         </label>
                         <hr />
                     </li>
                     <li role="option"
                         class="px-6 py-1 my-1 focus:outline-none focus:bg-emerald-100 hover:bg-emerald-400 cursor-pointer">
-                        <a href="{{ route('admin.property.create') }}">Ajouter Parcelle</a>
-                    </li>
-                    <li role="option"
-                        class="px-6 py-1 my-1 focus:outline-none focus:bg-emerald-100 hover:bg-emerald-400 cursor-pointer">
-                        <a href="">Ajouter terrains</a>
-                    </li>
-                    <li role="option"
-                        class="px-6 py-1 my-1 focus:outline-none focus:bg-blue-100 hover:bg-emerald-400 cursor-pointer">
-                        <a href="">Ajouter Maison</a>
+                        <a href="{{ route('admin.property.create') }}">Ajouter Un Bien</a>
                     </li>
                     <li role="option"
                         class="px-6 py-1 my-1 focus:outline-none focus:bg-blue-100 hover:bg-emerald-400 cursor-pointer">

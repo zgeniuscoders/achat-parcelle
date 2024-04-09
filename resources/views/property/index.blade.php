@@ -9,7 +9,7 @@
         <div class="container mx-auto lg:px-30 px-10 text-center">
             <h1
                 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-                Tout nos articles</h1>
+                Tout nos bien</h1>
             <p class="mb-6 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">Here at
                 Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and
                 drive economic growth.</p>

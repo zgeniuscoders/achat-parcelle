@@ -20,14 +20,27 @@ class Property extends Model
         return number_format($this->price, 0, ',', '.');
     }
 
+    /**
+     * @return BelongTo
+     */
     public function quater(): BelongsTo
     {
         return $this->belongsTo(Quater::class);
     }
 
+    /**
+     * @return BelongTo
+     */
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * @return BelongTo
+     */
+    public function category(): BelongsTo{
+        return $this->belongsTo(Category::class);
     }
 
     protected function images(): Attribute
@@ -36,4 +49,5 @@ class Property extends Model
             get: fn (string $value) => json_decode($value),
         );
     }
+
 }
