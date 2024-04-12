@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Role;
 use App\Models\Quater;
 use App\Models\Township;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class QuaterController extends Controller
 {
@@ -16,6 +18,12 @@ class QuaterController extends Controller
     }
 
     public function store(Request $request){
+
+
+        if(Auth::user()->cannot('create',Quater::class)){
+            abort(403);
+        }
+        
         Quater::create($request->all());
         return redirect()->back()->with("success', 'Le quartier $request->name a ete ajouter avec success");
     }

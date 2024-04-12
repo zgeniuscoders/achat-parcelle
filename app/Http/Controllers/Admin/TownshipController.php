@@ -1,19 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Role;
 use App\Models\Township;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class TownshipController extends Controller
 {
-
-    public function store(Request $request)
-    {
-        Township::create($request->all());
-        return redirect()->back()->with("success', 'La commune $request->name a ete ajouter avec success");
-    }
 
     public function index()
     {
@@ -21,9 +17,25 @@ class TownshipController extends Controller
         return view("admin.township.index", compact("townships"));
     }
 
+    public function store(Request $request)
+    {
+        if (Auth::user()->cannot('create', Township::class)) {
+            abort(403);
+        }
+
+        Township::create($request->all());
+        return redirect()->back()->with("success', 'La commune $request->name a ete ajouter avec success");
+    }
+
+
     public function destroy(string $id)
     {
         $township = Township::findOrFail($id);
+
+        if (Auth::user()->cannot('destroy', $township)) {
+            abort(403);
+        }
+
         $township->delete();
         return redirect()->back();
     }

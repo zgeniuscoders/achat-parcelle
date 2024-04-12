@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
-        $properties = Property::all();
+        $properties = Property::all()->take(6);
         $categories = Category::all();
         return view("home", compact('properties', 'categories'));
     }

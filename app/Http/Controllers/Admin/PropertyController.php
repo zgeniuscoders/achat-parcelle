@@ -9,6 +9,7 @@ use App\Models\Township;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PropertyRequest;
+use Illuminate\Support\Facades\Auth;
 
 class PropertyController extends Controller
 {
@@ -25,6 +26,7 @@ class PropertyController extends Controller
      */
     public function create()
     {
+
         $townships = Township::with('quaters')->get();
         $categories = Category::all();
 
@@ -36,6 +38,10 @@ class PropertyController extends Controller
      */
     public function store(PropertyRequest $request)
     {
+
+        if (Auth::user()->cannot('create', Property::class)) {
+            abort(403, "vous ne disposer pas acces de droit pour publier un bien");
+        }
 
         $imagePaths = [];
         if ($request->hasFile('image')) {
@@ -92,7 +98,13 @@ class PropertyController extends Controller
      */
     public function update(Request $request, string $id)
     {
+
         $property = Property::findOrFail($id);
+
+        if (Auth::user()->cannot('update', $property)) {
+            abort(403, "vous ne disposer pas acces de droit pour mettre a jour cette bien");
+        }
+
         $property->update($request->all());
 
         return redirect('/admin')->with('success', "votre $property->name a ete mis a jour avec success");
@@ -103,8 +115,13 @@ class PropertyController extends Controller
      */
     public function destroy(string $id)
     {
-        $Property = Property::findOrFail($id);
-        $Property->delete();
+        $property = Property::findOrFail($id);
+
+        if (Auth::user()->cannot('delete', $property)) {
+            abort(403, "vous ne disposer pas acces de droit pour supprimer cette bien");
+        }
+
+        $property->delete();
 
         return redirect()->back()->with('success', 'votre property a ete supprimer avec success');
     }

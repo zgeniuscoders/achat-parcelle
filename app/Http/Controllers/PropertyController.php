@@ -7,6 +7,7 @@ use App\Models\Property;
 use App\Models\Quater;
 use App\Models\Township;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PropertyController extends Controller
 {
@@ -18,6 +19,7 @@ class PropertyController extends Controller
      */
     public function index(Request $request)
     {
+
         $properties = Property::with(['user', 'quater', 'quater.township', 'category']);
         $categories = Category::all();
 

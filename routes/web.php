@@ -7,8 +7,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\Admin\PropertyController as AdminPropertyController;
-use App\Http\Controllers\Api\QuaterController;
-use App\Http\Controllers\Api\TownshipController;
+use App\Http\Controllers\Admin\QuaterController;
+use App\Http\Controllers\Admin\TownshipController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::resource('/property', PropertyController::class);
