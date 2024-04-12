@@ -42,7 +42,7 @@ class PropertyController extends Controller
             $properties = $properties->where('quater_id', $quater->id);
         }
 
-        $properties = $properties->get();
+        $properties = $properties->paginate(6);
 
         return view("property.index", compact('properties', 'categories'));
     }

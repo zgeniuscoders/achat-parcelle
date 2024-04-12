@@ -49,7 +49,8 @@
                 class="w-[200px] h-[200px] blur-3xl opacity-50 bg-gradient-to-r to-emerald-600 from-sky-400 rounded-full absolute top-[300px] -z-50 animate-spin animate">
             </section>
 
-            @include('partials.pagination')
+            {{ $properties->links() }}
+
         </section>
 
 
