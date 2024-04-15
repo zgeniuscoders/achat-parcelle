@@ -28,11 +28,12 @@
         <!-- component -->
         <div class="flex-1 p:2 sm:p-6 justify-between flex flex-col h-screen overflow-hidden" v-if="hasChatId">
             <chat-header :user="user" />
-            <chat-body :receiver-id="user.id" :current-user="2"/>
-            <chat-footer :receiver-id="user.id"/>
+            <chat-body :receiver-id="receiverId" />
+            <chat-footer :receiver-id="user.id" :current-user="props.currentUser"/>
         </div>
         <div class="flex-1 p:2 sm:p-6 flex flex-col item-center justify-center h-screen overflow-hidden" v-else>
-            <p class="text-gray-200 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, voluptatum.</p>
+            <p class="text-gray-200 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
+                voluptatum.</p>
         </div>
 
     </main>
@@ -70,33 +71,32 @@ import chatBody from './chat-body.vue';
 import chatFooter from './chat-footer.vue';
 import chatHeader from './chat-header.vue';
 import UserList from './user-list.vue'
-import {useUsers} from "../services/"
+import { useUsers } from "../services/"
 
-import { ref,onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
 
 const hasChatId = ref(false)
-const receiverId = ref(3)
+const receiverId = ref(0)
 
-const {getUser, user} = useUsers()
+const { getUser, user } = useUsers()
+const props = defineProps({ userId: String, currentUser: String })
 
-function routerLoad(id) {
+async function routerLoad(id) {
     receiverId.value = id
     hasChatId.value = true
+    await getUser(receiverId.value)
 }
 
 
 onMounted(() => {
 
-    getUser(3)
-    // const route = useRoute()
-    // routeParams.value = route.params
-    // console.log(routeParams.value)
-    // if (routeParams.value.id) {
-    //     routerLoad(routeParams.value.id)
-    // }
+    if (props.userId) {
+        routerLoad(parseInt(props.userId))
+    }
 
     emitter.on("onUserSelected", (id) => {
         routerLoad(id)
+        console.log(id);
     })
 })
 

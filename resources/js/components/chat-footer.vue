@@ -50,14 +50,17 @@ import emitter from 'tiny-emitter/instance'
 
 
 const {sendMessage} = useMessages()
-const props = defineProps({receiverId: Number})
+const props = defineProps({receiverId: Number, currentUser: String})
 const state = ref({
     message: '',
+    senderId: 0,
     receiverId: 0
 })
 
 const sendMsg = () => {
     state.value.receiverId = props.receiverId
+    state.value.senderId = parseInt(props.currentUser)
+
     sendMessage(state.value)
 
     emitter.emit('userSentMessage')

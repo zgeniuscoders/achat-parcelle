@@ -10,7 +10,7 @@
 </head>
 
 <body class="dark:bg-gray-900 overflow-hidden" id="app">
-    <chat />
+    <chat user-id="{{ request()->input('user') }}" current-user="{{ request()->user()->id }}"/>
 </body>
 
 </html>

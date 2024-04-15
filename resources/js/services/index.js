@@ -34,7 +34,8 @@ export function useMessages() {
     const sendMessage = async (data) => {
         await axios.post("/api/messages", {
             "message": data.message,
-            "receiverId": data.receiverId
+            "receiverId": data.receiverId,
+            "senderId": data.senderId
         })
     }
 
