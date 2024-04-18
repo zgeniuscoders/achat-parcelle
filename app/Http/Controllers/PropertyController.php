@@ -22,6 +22,7 @@ class PropertyController extends Controller
 
         $properties = Property::with(['user', 'quater', 'quater.township', 'category']);
         $categories = Category::all();
+        $townships = Township::with('quaters')->get();
 
         if ($request->has('category')) {
             $categoryRequest = $request->input('category');
@@ -46,7 +47,7 @@ class PropertyController extends Controller
 
         $properties = $properties->paginate(6);
 
-        return view("property.index", compact('properties', 'categories'));
+        return view("property.index", compact('properties', 'categories', 'townships'));
     }
 
 

@@ -34,7 +34,6 @@ import { onMounted } from "vue"
 import { useMessages } from "../services/index"
 import emitter from 'tiny-emitter/instance'
 
-
 const { getMessage, messages } = useMessages()
 const props = defineProps({ receiverId: Number, currentUser: Number })
 

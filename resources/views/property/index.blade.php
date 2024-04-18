@@ -5,7 +5,7 @@
 @endsection
 
 @section('main')
-    <main class="relative mt-40">
+    <main class="relative mt-40" id="app">
         <div class="container mx-auto lg:px-30 px-4 text-center">
             <h1
                 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
@@ -15,8 +15,11 @@
                 drive economic growth.</p>
         </div>
 
-        <section class="container mx-auto px-4 lg:px-30 relative">
-            @include('partials.tabs')
+        @include('partials.tabs')
+
+
+
+        <section class="relative container mx-auto px-4 lg:px-30 gap-4">
 
             <div>
                 <div class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[twe-tab-active]:block text-center"

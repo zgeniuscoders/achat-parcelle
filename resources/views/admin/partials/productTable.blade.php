@@ -12,7 +12,7 @@
                 Prix
             </th>
             <th class="font-semibold text-left py-3 px-1 flex-1 truncate">
-                Taille
+                Dimension
             </th>
             <th class="font-semibold text-left py-3 px-1 flex-1 truncate">
                 Commune
@@ -75,17 +75,26 @@
                     {{ $property->quater->name }}
                 </td>
                 <td class="py-3 px-1 flex-1  flex gap-2">
-                    <form action="{{ route('admin.property.destroy', ['property' => $property->id]) }}" method="post">
-                        @method('delete')
-                        @csrf
-                        <button type="submit" class="text-red-500">supprimer</button>
-                    </form>
-                    <a href="{{ route('admin.property.edit', ['property' => $property->id]) }}" class="text-blue-500">modifier</a>
-                    <form action="{{ route('admin.property.update', ['property' => $property->id]) }}" method="post">
-                        @method('put')
-                        @csrf
-                        <button type="submit" class="text-red-500">marquer comme vendu</button>
-                    </form>
+                    @if (request()->routeIs('reporting.index'))
+                        <a href="{{ route('admin.property.edit', ['property' => $property->id]) }}"
+                            class="text-blue-500">Promouvoir</a>
+                    @else
+                        <form action="{{ route('admin.property.destroy', ['property' => $property->id]) }}"
+                            method="post">
+                            @method('delete')
+                            @csrf
+                            <button type="submit" class="text-red-500">supprimer</button>
+                        </form>
+                        <a href="{{ route('admin.property.edit', ['property' => $property->id]) }}"
+                            class="text-blue-500">modifier</a>
+                        <form action="{{ route('admin.property.update', ['property' => $property->id]) }}"
+                            method="post">
+                            @method('put')
+                            @csrf
+                            <button type="submit" class="text-red-500">marquer comme vendu</button>
+                        </form>
+                    @endif
+
                 </td>
             </tr>
         @endforeach

@@ -10,6 +10,9 @@ export default {
       backgroundColor: {
         "dark": "#151C21",
       },
+      gridTemplateColumns:{
+        "auto": "400px auto"
+      }
     },
   },
   plugins: [],

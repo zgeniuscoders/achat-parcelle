@@ -8,6 +8,11 @@
     </header>
 @endsection
 
+
+@section('top-nav')
+    @include('admin.partials.topNav')
+@endsection
+
 @section('main')
     <!-- main content -->
     <main class="flex-grow flex min-h-0 gap-4 my-4 px-4">
