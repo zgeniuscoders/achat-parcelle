@@ -12,7 +12,7 @@
                 Prix
             </th>
             <th class="font-semibold text-left py-3 px-1 flex-1 truncate">
-                Dimension
+                Dimension1
             </th>
             <th class="font-semibold text-left py-3 px-1 flex-1 truncate">
                 Commune
