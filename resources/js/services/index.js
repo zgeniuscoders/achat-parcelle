@@ -57,3 +57,18 @@ export function useMessages() {
         messages
     }
 }
+
+export function useBoost(){
+    const boost = ref()
+
+    const boosted = async (data) => {
+       await axios.post(`/api/boost`,data).then(res => {
+        boost.value = res.data
+       })
+    }
+
+    return {
+        boost,
+        boosted
+    }
+}

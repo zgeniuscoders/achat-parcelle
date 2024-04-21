@@ -76,7 +76,7 @@
                 </td>
                 <td class="py-3 px-1 flex-1  flex gap-2">
                     @if (request()->routeIs('reporting.index'))
-                        <a href="{{ route('admin.property.edit', ['property' => $property->id]) }}"
+                        <a href="{{ route('boost.show', ['property' => $property->id]) }}"
                             class="text-blue-500">Promouvoir</a>
                     @else
                         <form action="{{ route('admin.property.destroy', ['property' => $property->id]) }}"

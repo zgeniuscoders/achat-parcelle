@@ -39,6 +39,10 @@
                             class="px-6 py-1 my-1 focus:outline-none focus:bg-blue-100 hover:bg-emerald-400 cursor-pointer">
                             <a href="{{ route('admin.quater.index') }}">Ajouter quartier</a>
                         </li>
+                        <li role="option"
+                            class="px-6 py-1 my-1 focus:outline-none focus:bg-blue-100 hover:bg-emerald-400 cursor-pointer">
+                            <a href="{{ route('admin.category.index') }}">Ajouter une category</a>
+                        </li>
                     @endcan
 
 
