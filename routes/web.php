@@ -23,18 +23,18 @@ Route::resource('agent', AgentController::class);
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('chats', [ChatController::class, 'index'])->name('chat');
 
+    Route::prefix("admin")->group(function () {
+        Route::middleware('redirect.superAdmin')->group(function () {
+            Route::resource("users", UserController::class)->names("admin.user");
+            Route::resource("roles", RoleController::class)->names("admin.role")->except(["show", "create"]);
+        });
 
-    Route::middleware('redirect.admin')->group(function () {
-        Route::get('admin/chats', MessageController::class)->name('admin.chat');
-        Route::get('admin', [AdminController::class, 'index'])->name('admin');
-
-        Route::prefix('admin')->group(function () {
+        Route::middleware('redirect.admin')->group(function () {
+            Route::get('chats', MessageController::class)->name('admin.chat');
+            Route::get('/', [AdminController::class, 'index'])->name('admin');
 
             Route::get('boost/{property}', [BoostController::class, 'show'])->name('boost.show');
             Route::post('boost', [BoostController::class, 'boost'])->name('boost.boost');
-
-            Route::resource("users", UserController::class)->names("admin.user");
-            Route::resource("roles", RoleController::class)->names("admin.role")->except(["show","create"]);
             Route::resource('category', CategoryController::class)->names("admin.category")->except(['show', 'create']);
             Route::resource("reporting", ReportingController::class);
             Route::resource('property', AdminPropertyController::class)->names('admin.property');
