@@ -43,7 +43,7 @@ class BoostController extends Controller
 
         $newDate->addDays($days);
 
-        $property = Property::findOrFail(1);
+        $property = Property::findOrFail($request->propertyId);
         $property->update([
             "boosted" => true,
             "boosted_until" => $newDate->toDateTimeString()

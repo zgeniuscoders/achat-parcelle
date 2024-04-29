@@ -13,6 +13,8 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\TownshipController;
 use App\Http\Controllers\Admin\ReportingController;
 use App\Http\Controllers\Admin\PropertyController as AdminPropertyController;
+use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\UserController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::resource('/property', PropertyController::class);
@@ -31,6 +33,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
             Route::get('boost/{property}', [BoostController::class, 'show'])->name('boost.show');
             Route::post('boost', [BoostController::class, 'boost'])->name('boost.boost');
 
+            Route::resource("users", UserController::class)->names("admin.user");
+            Route::resource("roles", RoleController::class)->names("admin.role")->except(["show","create"]);
             Route::resource('category', CategoryController::class)->names("admin.category")->except(['show', 'create']);
             Route::resource("reporting", ReportingController::class);
             Route::resource('property', AdminPropertyController::class)->names('admin.property');
