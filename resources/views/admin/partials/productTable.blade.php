@@ -76,8 +76,8 @@
                 </td>
                 <td class="py-3 px-1 flex-1  flex gap-2">
                     @if (request()->routeIs('reporting.index'))
-                        <a href="{{ route('boost.show', ['property' => $property->id]) }}"
-                            class="text-blue-500">Promouvoir</a>
+                        {{-- <a href="{{ route('boost.show', ['property' => $property->id]) }}"
+                            class="text-blue-500">Promouvoir</a> --}}
                     @else
                         <form action="{{ route('admin.property.destroy', ['property' => $property->id]) }}"
                             method="post">
@@ -91,6 +91,7 @@
                             method="post">
                             @method('put')
                             @csrf
+                            <input type="hidden" name="is_solded" value="{{ true }}">
                             <button type="submit" class="text-red-500">marquer comme vendu</button>
                         </form>
                     @endif

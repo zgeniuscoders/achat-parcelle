@@ -45,7 +45,9 @@ class PropertyController extends Controller
             $properties = $properties->where('quater_id', $quater->id);
         }
 
-        $properties = $properties->paginate(6);
+        $properties = $properties
+            ->where("is_solded", true)
+            ->paginate(6);
 
         return view("property.index", compact('properties', 'categories', 'townships'));
     }

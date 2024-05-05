@@ -56,16 +56,14 @@
             <nav class="bg-white/5 flex p-4">
                 <!-- open tickets nav -->
                 <section aria-labelledby="open-tickets-tabs-label" class="mr-4 focus:outline-none">
-                    <label id="open-tickets-tabs-label" class="font-semibold block mb-1 text-sm">Open Tickets
-                        <span class="font-normal text-gray-700">(current)</span>
-                    </label>
+                    <label id="open-tickets-tabs-label" class="font-semibold block mb-1 text-sm">Vendu</label>
                     <ul class="flex">
                         <li>
                             <button
                                 class="focus:outline-none focus:bg-emerald-200 border-gray-900 p-2 rounded-l-md border border-r-0 bg-white/5 flex flex-col items-center w-24">
                                 <p class="font-semibold text-lg">6</p>
                                 <p class="text-sm uppercase text-gray-600">
-                                    You
+                                    Vendu
                                 </p>
                             </button>
                         </li>
@@ -74,7 +72,7 @@
                                 class="focus:outline-none focus:bg-emerald-200 border-gray-900 p-2 border rounded-r-md bg-white/5 flex flex-col items-center w-24 cursor-pointer">
                                 <p class="font-semibold text-lg">23</p>
                                 <p class="text-sm uppercase text-gray-600">
-                                    Groups
+                                    Reste
                                 </p>
                             </button>
                         </li>

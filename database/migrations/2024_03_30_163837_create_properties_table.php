@@ -25,6 +25,7 @@ return new class extends Migration
             $table->boolean('status')->default(1);
             $table->string('image');
             $table->json("images");
+            $table->boolean("is_solded")->default(false);
             $table->boolean("boosted")->default(false);
             $table->timestamp("boosted_until")->nullable();
             $table->timestamps();

@@ -33,8 +33,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
             Route::get('chats', MessageController::class)->name('admin.chat');
             Route::get('/', [AdminController::class, 'index'])->name('admin');
 
-            Route::get('boost/{property}', [BoostController::class, 'show'])->name('boost.show');
-            Route::post('boost', [BoostController::class, 'boost'])->name('boost.boost');
+            // Route::get('boost/{property}', [BoostController::class, 'show'])->name('boost.show');
+            // Route::post('boost', [BoostController::class, 'boost'])->name('boost.boost');
             Route::resource('category', CategoryController::class)->names("admin.category")->except(['show', 'create']);
             Route::resource("reporting", ReportingController::class);
             Route::resource('property', AdminPropertyController::class)->names('admin.property');

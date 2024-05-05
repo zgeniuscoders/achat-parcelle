@@ -16,4 +16,4 @@ Route::get('user', function () {
 
 Route::apiResource('users', UserController::class);
 Route::apiResource("messages", MessageController::class)->except('index');
-Route::post('boost', [BoostController::class, 'store']);
+// Route::post('boost', [BoostController::class, 'store']);

@@ -66,7 +66,7 @@
 
         </section>
 
-        @include('partials.pricing')
+        {{-- @include('partials.pricing') --}}
 
         @include('partials.faq')
     </main>

@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
-        $properties = Property::all()->take(6);
+        $properties = Property::where("is_solded",true)->get()->take(6);
         $categories = Category::all();
         return view("home", compact('properties', 'categories'));
     }
