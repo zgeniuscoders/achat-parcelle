@@ -1,4 +1,4 @@
-<footer aria-labelledby="footer-heading">
+<footer aria-labelledby="footer-heading" class="hidden md:block">
     <h2 id="footer-heading" class="sr-only">Footer</h2>
     <div class="mx-auto max-w-7xl py-12 px-6 lg:py-16 lg:px-8">
         <div class="xl:grid xl:grid-cols-3 xl:gap-8">

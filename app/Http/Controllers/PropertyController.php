@@ -46,7 +46,6 @@ class PropertyController extends Controller
         }
 
         $properties = $properties
-            ->where("is_solded", true)
             ->paginate(6);
 
         return view("property.index", compact('properties', 'categories', 'townships'));

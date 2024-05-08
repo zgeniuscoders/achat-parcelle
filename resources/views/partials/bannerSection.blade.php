@@ -11,8 +11,8 @@
         accompagner. </p>
 
     <div class="mt-4">
-        <x-button-link buttonTitle="Devenir Commissionnaire" />
-        <x-button-link buttonTitle="Commencer" link="{{ route('property.index') }}"/>
+        <x-button-link buttonTitle="Commencer a vendre" />
+        <x-button-link buttonTitle="Acheter" link="{{ route('property.index') }}"/>
     </div>
 
 </section>

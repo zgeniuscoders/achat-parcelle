@@ -72,3 +72,19 @@ export function useBoost(){
         boosted
     }
 }
+
+
+export function useTownship(){
+    const townships = ref()
+
+    const getTownships = async ()  => {
+        await axios.get('/api/townships').then(res => {
+            townships.value = res.data.data
+        })
+    }
+
+    return {
+        getTownships,
+        townships
+    }
+}
